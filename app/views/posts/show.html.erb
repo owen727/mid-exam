@@ -1,0 +1,11 @@
+<h2><%= @post.title %></h2>
+<%= simple_format @post.description %>
+
+
+<p>
+  <%= link_to "Edit",edit_post_path(@post),:class =>"btn btn-default" %>
+</p>
+
+<p>
+  <%= link_to "Back to index", posts_path,:class =>"btn btn-default" %>
+</p>

@@ -1,26 +1,27 @@
 
 <h1>KAIJU ATTACK</h1>
 
+
 <table>
-  <%@posts.each do |p| %>
+  <% @posts.each do |p| %>
+  
     <tr>
-      <td> 
-          
-          <h2>
-            <%= link_to p.title, post_path(p) %>
-
-            
-          </h2>
-          
-          <h3>Posted at <%= time_ago_in_words(p.created_at) %> ago by 
-            <%= p.user.email %>
-            <%= link_to "Delete", post_path(p),:method => :delete %> 
-          </h3> 
-
+      
+      <td>
+        <%= p.title %>
+        
+        <%= link_to "Show & Edit", post_path(p), :class =>"btn btn-info" %>
+       
+        <%= link_to "Delete", post_path(p), :method => :delete ,:class =>"btn btn-danger" %>
       </td>
+    
     </tr>
+
   <% end %>
+
+  
 </table>
 
 
 
+<%=link_to "New Post",new_post_path %>
